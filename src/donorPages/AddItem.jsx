@@ -1,9 +1,9 @@
 import React from 'react'
- 
+import  './AddItem.css'
 function AddItem() {
   return (
-    <div className="mb-3 container">
-        <form  className="w-75 mx-auto">
+    <div className="mb-3 container form">
+        <form  className="w-75 mx-auto ">
             <div className="mb-3">
                 <label htmlFor="name">Name </label>
                 <input type="text"  id="name" className="form-control" />
