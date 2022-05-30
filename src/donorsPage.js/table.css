@@ -1,0 +1,16 @@
+.viewalldonations {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+thead{
+    position:sticky;
+}
+
+.primary {
+    position: sticky;
+    background-color: antiquewhite;
+    padding: 10px 20px;
+    width: 200px;
+
+}
