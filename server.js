@@ -8,23 +8,23 @@ app.use(exp.static(path.join(__dirname,'./build')))
 
 const dburl="mongodb+srv://Varun:Varun@cluster0.klf74.mongodb.net/?retryWrites=true&w=majority"
 let collectionObj;
-//let articlecollectionObj;
+let itemcollectionObj;
 
 mc.connect(dburl,{ useNewUrlParser: true, useUnifiedTopology: true })
 .then(client=>{
     collectionObj=client.db("hackathon").collection("usercollection");
-    //articlecollectionObj=client.db("hackathon").collection("articlecollection");
+    itemcollectionObj=client.db("hackathon").collection("itemcollection");
     app.set("collectionObj",collectionObj);
-    //app.set("articlecollectionObj",articlecollectionObj)
+    app.set("itemcollectionObj",itemcollectionObj)
     console.log("DB connection succesful ");
 })
 .catch(err=>console.log("Err in db connection",err));
 
 
-const userapp=require("./api/userapi")
+const userapp=require("./apis/userapi")
 app.use("/userapp",userapp);
-//const articleapi=require("./api/articleapi")
-//app.use("/articleapi",articleapi);
+const itemapi=require("./apis/itemapi")
+app.use("/itemapi",itemapi);
 
 
 app.use('*',(req,res)=>{
