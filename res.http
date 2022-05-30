@@ -1,4 +1,4 @@
-POST http://localhost:3000/user-api/create-user
+POST http://localhost:4000/userapi/create-user
 Content-Type: application/json
 
 {

@@ -20,9 +20,8 @@ mc.connect(dburl,{ useNewUrlParser: true, useUnifiedTopology: true })
 })
 .catch(err=>console.log("Err in db connection",err));
 
-
 const userapp=require("./apis/userapi")
-app.use("/userapp",userapp);
+app.use("/userapi",userapp);
 const itemapi=require("./apis/itemapi")
 app.use("/itemapi",itemapi);
 
