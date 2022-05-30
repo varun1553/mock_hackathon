@@ -1,0 +1,31 @@
+POST http://localhost:4000/userapi/create-user
+Content-Type: application/json
+
+{
+    "username":"kiran",
+    "password":"kiran",
+    "email":"kiran@gmail.com",
+    "city":"delhi"
+    }
+
+###
+POST http://localhost:4000/userapi/login
+Content-Type: application/json
+
+{
+    "username":"kiran",
+    "password":"kiran"
+    }
+
+###
+###
+POST http://localhost:4000/itemapi/additem
+Content-Type: application/json
+
+{
+    "productId":104,
+    "productName":"Washing machine",
+    "brand":"ibm",
+    "price":45000,
+    "photo":"https://www.google.com/imgres?imgurl=https%3A%2F%2Fimages.pexels.com%2Fphotos%2F674010%2Fpexels-photo-674010.jpeg%3Fcs%3Dsrgb%26dl%3Dpexels-anjana-c-674010.jpg%26fm%3Djpg&imgrefurl=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fbeautiful%2F&tbnid=2nDXavJs9DoKTM&vet=12ahUKEwjmkfD32ob4AhXuzaACHT-hAtwQMygAegUIARDWAQ..i&docid=B51x0PBR9KNzvM&w=2976&h=3968&q=images&ved=2ahUKEwjmkfD32ob4AhXuzaACHT-hAtwQMygAegUIARDWAQ"
+}
