@@ -3,7 +3,8 @@ import "./table.css"
 import {data} from "./dummydata.jsx"
 
 export default function Table() {
-    
+
+    console.log(data)
     const mydata  = data;
     const dataitems = mydata.map((dataitem) => 
         <tr className="dataitems">
@@ -29,5 +30,10 @@ export default function Table() {
             </table>
         </div>
     </div>
+<<<<<<< HEAD:src/donorsPage.js/table.jsx
   );
 }
+=======
+  )
+}
+>>>>>>> f2f74e6b590191a9d8bcaaae43e57a94cff87e6f:src/donorPages/table.jsx
