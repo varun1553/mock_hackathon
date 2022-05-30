@@ -1,7 +1,8 @@
 .secondary {
-    background-color:rgb(244, 212, 212);
+    background-color:rgb(246, 231, 231);
     padding: 10px 20px;
     width: 200px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .viewalldonations {
@@ -15,8 +16,9 @@ thead{
 
 .primary {
     position: sticky;
-    background-color: white;
+    background-color: rgb(244, 203, 203);
     padding: 10px 20px;
     width: 200px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
