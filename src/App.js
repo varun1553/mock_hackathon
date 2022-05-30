@@ -2,7 +2,8 @@ import {Routes , Route} from 'react-router-dom';
 import Home from './components/Home';
 
 import {Link} from 'react-router-dom';
-
+import Signup from './components/Signup';
+import Signin from './components/Signin';
 
 
 
@@ -19,7 +20,11 @@ function App() {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <Link className="nav-link "  to=" ">Home</Link>
+          <Link className="nav-link "  to="Signup">SignUp</Link>
+          </li>
+          <li className="nav-item">
+          <Link className="nav-link "  to="Signin">SignIn</Link>
+
         </li>
         
         
@@ -36,6 +41,10 @@ function App() {
       <Routes>
 
       <Route path="" element={ <Home />} />
+      <Route path="Signup" element={ <Signup />} />
+      <Route path="Signin" element={ <Signin />} />
+      
+
       
 
       </Routes>                                                                                                                                                                 
