@@ -1,4 +1,4 @@
-POST http://localhost:3000/user-api/create-user
+POST http://localhost:4000/userapi/create-user
 Content-Type: application/json
 
 {
@@ -7,3 +7,24 @@ Content-Type: application/json
     "email":"kiran@gmail.com",
     "city":"delhi"
     }
+
+###
+POST http://localhost:4000/userapi/login
+Content-Type: application/json
+
+{
+    "username":"kiran",
+    "password":"kiran"
+    }
+
+###
+###
+POST http://localhost:4000/itemapi/additem
+Content-Type: application/json
+
+{
+    "productId":104,
+    "productName":"Washing machine",
+    "brand":"ibm",
+    "price":45000
+}

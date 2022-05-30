@@ -22,7 +22,7 @@ mc.connect(dburl,{ useNewUrlParser: true, useUnifiedTopology: true })
 
 
 const userapp=require("./apis/userapi")
-app.use("/userapp",userapp);
+app.use("/userapi",userapp);
 const itemapi=require("./apis/itemapi")
 app.use("/itemapi",itemapi);
 
