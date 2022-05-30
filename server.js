@@ -2,11 +2,11 @@ const exp=require('express')
 const mc=require('mongodb').MongoClient;
 const app=exp();
 app.use(exp.json())
-
+require('dotenv').config()
 const path=require('path')
 app.use(exp.static(path.join(__dirname,'./build')))
 
-const dburl="mongodb+srv://Varun:Varun@cluster0.klf74.mongodb.net/?retryWrites=true&w=majority"
+const dburl=process.env.DATABASE_CONNECTION_URL
 let collectionObj;
 let itemcollectionObj;
 
@@ -36,7 +36,7 @@ app.use((req,res,next)=>{
 });
 
 
-
-app.listen(4000,()=>{
+const port=process.env.PORT
+app.listen(port,()=>{
     console.log("server listening on port 4000")
 });

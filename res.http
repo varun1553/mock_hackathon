@@ -1,0 +1,9 @@
+POST http://localhost:3000/user-api/create-user
+Content-Type: application/json
+
+{
+    "username":"kiran",
+    "password":"kiran",
+    "email":"kiran@gmail.com",
+    "city":"delhi"
+    }
