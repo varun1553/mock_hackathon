@@ -5,7 +5,30 @@ const bcryptjs=require('bcryptjs');
 const jwt=require('jsonwebtoken')
 require('dotenv').config()
 userapp.use(exp.json())
+var cloudinary=require('cloudinary').v2
+const {CloudinaryStorage} = require('multer-storage-cloudinary')
+const multer=require('multer')
+//configure cloudinary
+cloudinary.config({
+   cloud_name:process.env.CLOUD_NAME,
+   api_key:process.env.API_KEY,
+   api_secret:process.env.API_SECRET,
+   secure:true,
 
+})
+//configure cloudinary storage
+const cloudinaryStorge = new CloudinaryStorage({
+    cloudinary:cloudinary,
+    params:async(req,file)=>{
+       return {
+          folder: "U&I",
+          public_id: file.fieldname+'-'+Date.now(),
+       }
+    },
+    
+    })
+//configure multer
+    var upload= multer({storage:cloudinaryStorge});
 userapp.post("/create-user",expressAsyncHandler(async(request,response)=>{
     let usercollectionobj=request.app.get("collectionObj");
     let newuser=request.body;
@@ -49,6 +72,18 @@ userapp.post(
         }
 
 }))
+
+
+userapp.delete('/remove-user/:name',expressAsyncHandler(async(req,res)=>{
+    //get usercollectionobject
+    let userCollectionObj=req.app.get("collectionObj")
+    //get params from request
+    let Uname=request.params.name
+    await userCollectionObj.deleteOne({username:Uname})
+    //send response
+    res.send({message:'user deleted'})
+ }))
+ 
 // userapp.get('/test',verifyToken,expressAsyncHandler(async(request,response)=>{
 //     response.send({message:'this is from private route'})
 //  }))
